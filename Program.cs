@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 
 namespace Database_3
@@ -12,12 +13,6 @@ namespace Database_3
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
-
-            using (var context = new ApplicationContext())
-            {
-                context.Database.EnsureDeleted();
-                context.Database.EnsureCreated();
-            }
         }
     }
 }

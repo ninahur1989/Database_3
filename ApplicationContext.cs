@@ -5,7 +5,7 @@ namespace Database_3
 {
     public class ApplicationContext : DbContext
     {
-        private readonly string _connectionString;
+        private readonly string _connectionString = " Data Source=DESKTOP-D9VSSPS;Initial Catalog = Application;Integrated Security=True";
         public DbSet<Project> Projects { get; set; }
 
         public DbSet<EmployeeProject> EmployeeProjects { get; set; }
@@ -14,17 +14,7 @@ namespace Database_3
 
         public DbSet<Office> Offices { get; set; }
         public DbSet<Title> Titles { get; set; }
-
-        public ApplicationContext()
-        {
-            _connectionString = GetJson();
-        }
-
-        public string GetJson()
-        {
-            var json = JsonConvert.DeserializeObject<ApplicationContext>(File.ReadAllText(@"C:\Users\Admin\source\repos\Database_3\Database_3\ConfigJson\Config.json"));
-            return json._connectionString;
-        }
+        public DbSet<Client> Clients { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
