@@ -5,7 +5,6 @@ namespace Database_3
 {
     public class ApplicationContext : DbContext
     {
-        private readonly string _connectionString = " Data Source=DESKTOP-D9VSSPS;Initial Catalog = Application;Integrated Security=True";
         public DbSet<Project> Projects { get; set; }
 
         public DbSet<EmployeeProject> EmployeeProjects { get; set; }
@@ -16,10 +15,10 @@ namespace Database_3
         public DbSet<Title> Titles { get; set; }
         public DbSet<Client> Clients { get; set; }
 
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
-            optionsBuilder.UseSqlServer(_connectionString);
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new Configuraions.EmployeeConfiguration());

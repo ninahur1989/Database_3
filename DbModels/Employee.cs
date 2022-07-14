@@ -15,7 +15,7 @@ namespace Database_3
         public DateTime? DateOfBirthday { get; set; }
         public int OfficeId { get; set; }
         public int TitleId { get; set; }
-        public List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
+        public virtual List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
 
     }
 

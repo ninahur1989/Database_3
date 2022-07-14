@@ -10,6 +10,6 @@ namespace Database_3
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual  List<Employee> Employees { get; set; } = new List<Employee>();
     }
 }

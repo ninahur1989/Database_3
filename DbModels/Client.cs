@@ -13,7 +13,7 @@ namespace Database_3
         public int login { get; set; }
         public int Password { get; set; }
         public int Id { get; set; }
-        public List<Project> Projects { get; set; } = new List<Project>();
+        public virtual List<Project> Projects { get; set; } = new List<Project>();
 
     }
 }

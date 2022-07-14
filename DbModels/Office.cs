@@ -11,6 +11,7 @@ namespace Database_3
         public int Id { get; set; }
         public string Ttitle { get; set; }
         public string Location { get; set; }
-        public List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual List<Employee> Employees { get; set; } = new List<Employee>();
+        public virtual Employee Employee { get; set; }
     }
 }

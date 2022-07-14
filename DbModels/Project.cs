@@ -13,7 +13,7 @@ namespace Database_3
         public string Name { get; set; }
         public decimal Budget { get; set; }
         public DateTime StartedDate { get; set; }
-        public List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
+        public virtual List<EmployeeProject> EmployeeProject { get; set; } = new List<EmployeeProject>();
 
 
     }
